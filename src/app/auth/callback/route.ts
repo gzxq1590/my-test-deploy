@@ -7,13 +7,7 @@ export async function GET(request: Request) {
   const code = requestUrl.searchParams.get('code');
 
   if (code) {
-    const supabase = createRouteHandlerClient(
-      { cookies },
-      {
-        supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL || 'http://localhost:54321',
-        supabaseKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'dummy_anon_key',
-      }
-    );
+    const supabase = createRouteHandlerClient({ cookies });
     await supabase.auth.exchangeCodeForSession(code);
   }
 

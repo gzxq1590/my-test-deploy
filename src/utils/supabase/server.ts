@@ -2,21 +2,9 @@ import { createServerComponentClient, createServerActionClient } from '@supabase
 import { cookies } from 'next/headers';
 
 export const createServerClient = () => {
-  return createServerComponentClient(
-    { cookies },
-    {
-      supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL || 'http://localhost:54321',
-      supabaseKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'dummy_anon_key',
-    }
-  );
+  return createServerComponentClient({ cookies });
 };
 
 export const createActionClient = () => {
-  return createServerActionClient(
-    { cookies },
-    {
-      supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL || 'http://localhost:54321',
-      supabaseKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'dummy_anon_key',
-    }
-  );
+  return createServerActionClient({ cookies });
 };
