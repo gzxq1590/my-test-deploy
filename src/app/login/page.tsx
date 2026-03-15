@@ -99,6 +99,7 @@ export default function LoginPage() {
 
           <div className="flex space-x-4 pt-4">
             <button
+              type="button"
               onClick={handleSignIn}
               disabled={loading}
               className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50"
@@ -106,6 +107,7 @@ export default function LoginPage() {
               サインイン
             </button>
             <button
+              type="button"
               onClick={handleSignUp}
               disabled={loading}
               className="w-full flex justify-center py-2 px-4 border border-indigo-600 rounded-md shadow-sm text-sm font-medium text-indigo-600 bg-white hover:bg-indigo-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50"
