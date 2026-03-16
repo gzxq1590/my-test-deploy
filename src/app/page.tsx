@@ -1,5 +1,7 @@
 'use client'
 
+export const dynamic = 'force-dynamic'
+
 import { useState, useEffect } from 'react'
 import { calculateGrowthLevel } from '@/lib/growthLogic'
 import { supabase } from '@/lib/supabaseClient'
