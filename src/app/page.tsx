@@ -24,8 +24,8 @@ export default function Home() {
     const { data: { session } } = await supabase.auth.getSession()
     if (!session) return
 
-    const { data, error } = await supabase
-      .from('tasks')
+    const { data, error } = await (supabase
+      .from('tasks') as any)
       .select('*')
       .order('created_at', { ascending: true })
 
@@ -52,10 +52,10 @@ export default function Home() {
     const { data: { session } } = await supabase.auth.getSession()
     if (!session) return
 
-    const { data, error } = await supabase
-      .from('tasks')
+    const { data, error } = await (supabase
+      .from('tasks') as any)
       .insert([
-        { title: newTaskTitle, is_completed: false, user_id: session.user.id } as any
+        { title: newTaskTitle, is_completed: false, user_id: session.user.id }
       ])
       .select()
 
@@ -66,8 +66,8 @@ export default function Home() {
   }
 
   const toggleTask = async (id: string, currentStatus: boolean) => {
-    const { error } = await supabase
-      .from('tasks')
+    const { error } = await (supabase
+      .from('tasks') as any)
       .update({ is_completed: !currentStatus })
       .eq('id', id)
 
