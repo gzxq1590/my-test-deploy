@@ -1,0 +1,89 @@
+[
+  {
+    "description": "  ユーザーはタスクを完了させることで、サイトの見た目が進化する体験をする。",
+    "elements": [
+      {
+        "description": "",
+        "id": "タスク管理とサイトの成長;タスクを完了させるとサイトが成長する",
+        "keyword": "シナリオ",
+        "line": 6,
+        "name": "タスクを完了させるとサイトが成長する",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "前提",
+            "line": 7,
+            "name": "ユーザーがログインしている",
+            "match": {
+              "location": "src\\test\\steps\\growth.steps.ts:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9543300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "かつ",
+            "line": 8,
+            "name": "完了済みのタスクが 2つ ある",
+            "match": {
+              "location": "src\\test\\steps\\growth.steps.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2419800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "もし",
+            "line": 9,
+            "name": "新しいタスクを完了させる",
+            "match": {
+              "location": "src\\test\\steps\\growth.steps.ts:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 793300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "ならば",
+            "line": 10,
+            "name": "完了済みのタスクが 3つ になる",
+            "match": {
+              "location": "src\\test\\steps\\growth.steps.ts:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1532299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "かつ",
+            "line": 11,
+            "name": "サイトの成長レベルが 2 になる",
+            "match": {
+              "location": "src\\test\\steps\\growth.steps.ts:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1403000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "タスク管理とサイトの成長",
+    "line": 2,
+    "keyword": "機能",
+    "name": "タスク管理とサイトの成長",
+    "tags": [],
+    "uri": "src\\test\\features\\growth.feature"
+  }
+]
