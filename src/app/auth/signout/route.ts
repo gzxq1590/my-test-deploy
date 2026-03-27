@@ -1,8 +1,8 @@
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { cookies } from 'next/headers'
-import { NextResponse } from 'next/server'
+import { NextResponse, type NextRequest } from 'next/server'
 
-export async function POST() {
+export async function POST(request: NextRequest) {
   const cookieStore = await cookies()
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -24,7 +24,9 @@ export async function POST() {
 
   await supabase.auth.signOut()
 
-  return NextResponse.redirect(new URL('/login', 'http://localhost:3000'), {
+  const url = new URL(request.url)
+  url.pathname = '/login'
+  return NextResponse.redirect(url, {
     status: 302,
   })
 }
